@@ -7,6 +7,12 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Check Node and npm version') {
+            steps {
+                bat 'node -v'
+                bat 'npm -v'
+            }
+        }
         stage('Install dependencies') {
             steps {
                 bat 'npm ci'
